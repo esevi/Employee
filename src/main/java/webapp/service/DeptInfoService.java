@@ -26,61 +26,41 @@ import webapp.util.GlobalVars;
 public class DeptInfoService {
 	DeptDao deptdao;
 	DataSource dataSource;
-	
+
 	public void setDeptDao(DeptDao dao) {
 		deptdao = dao;
 	}
-	
+
 	public void setDataSource(DataSource ds) {
 		dataSource = ds;
 	}
-	
+
 	public Dept getDeptInfo(Integer deptno) {
-		
+
 		Dept dept = deptdao.selectByDeptno(deptno);
-		
+
 		return dept;
 	}
-	
+
 	public Dept getDeptInfoWithEmps(Integer deptno) {
-		
-		Dept dept= deptdao.selectByDeptnoWithEmps(deptno);
-		
+
+		Dept dept = deptdao.selectByDeptnoWithEmps(deptno);
+
 		return dept;
 	}
-	
+
 	public List<Dept> getDeptInfoAll() {
-		
+
 		List<Dept> list = deptdao.selectAll();
 
 		return list;
 	}
-	
-	
+
+	public List<Dept> getDeptInfoAllWithEmps() {
+
+		List<Dept> list = deptdao.selectAllWithEmps();
+
+		return list;
+	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
