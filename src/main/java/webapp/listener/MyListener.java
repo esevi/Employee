@@ -41,7 +41,7 @@ public class MyListener implements ServletContextListener {
     	log.info("contextInitialized...");
     	log.info("###########################");
     	
-    	ServletContext application = arg0.getServletContext();
+    	ServletContext application = sce.getServletContext();
     	String className = application.getInitParameter("className");
     	String url = application.getInitParameter("url");
     	String user = application.getInitParameter("user");
